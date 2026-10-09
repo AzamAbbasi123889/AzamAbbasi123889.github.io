@@ -1,0 +1,1024 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Azam Abbasi — AI/ML Developer and Generative AI enthusiast building LLM applications, AI agents, RAG systems and intelligent software.">
+  <title>Azam Abbasi | AI/ML & Generative AI Developer</title>
+
+  <style>
+    :root {
+      --bg: #090b12;
+      --panel: #111521;
+      --panel2: #151b2b;
+      --text: #f3f5fc;
+      --muted: #a0a9bd;
+      --line: rgba(255,255,255,.10);
+      --blue: #79aaff;
+      --purple: #b9a0ff;
+      --green: #79e6ba;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      background:
+        radial-gradient(ellipse at 10% 8%, rgba(86,93,200,.15), transparent 35%),
+        radial-gradient(ellipse at 95% 30%, rgba(53,133,224,.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container { width: min(1120px, 90%); margin-inline: auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9,11,18,.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      font-size: 18px;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: white;
+      background: linear-gradient(135deg, #729cff, #a28bff);
+      font-size: 17px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .menu-btn {
+      display: none;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 9px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 650px;
+      padding: 105px 0 90px;
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      border: 1px solid rgba(121,230,186,.25);
+      background: rgba(121,230,186,.06);
+      color: var(--green);
+      padding: 7px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -3.4px;
+      margin-bottom: 24px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, #8bb8ff, #c2a4ff 75%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 600px;
+    }
+
+    .hero p strong { color: #e8ecf8; font-weight: 600; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      color: #080b12;
+      border-color: transparent;
+      background: linear-gradient(115deg, #a4c5ff, #c7b4ff);
+    }
+
+    .btn-secondary { background: rgba(255,255,255,.035); }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(161,184,255,.6);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 29px;
+      border: 1px solid rgba(160,160,255,.24);
+      border-radius: 25px;
+      background: linear-gradient(145deg, #171e31, #10131e 70%);
+      box-shadow: 0 25px 90px rgba(69,82,180,.12);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      background: #7868ff;
+      filter: blur(100px);
+      opacity: .18;
+      top: -80px;
+      right: -70px;
+    }
+
+    .avatar {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      margin-bottom: 23px;
+      font-size: 27px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #5e80ed, #ad85f2);
+    }
+
+    .hero-card h2 { font-size: 20px; margin-bottom: 5px; }
+
+    .hero-card > p { font-size: 13px; }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: #d3c7ff;
+    }
+
+    .stat span { font-size: 11px; color: var(--muted); }
+
+    .mini-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 12px;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip {
+      font-size: 11px;
+      color: #cbd6ef;
+      padding: 6px 10px;
+      background: rgba(130,153,255,.08);
+      border: 1px solid rgba(130,153,255,.16);
+      border-radius: 7px;
+    }
+
+    section { padding: 83px 0; }
+
+    .section-head { max-width: 680px; margin-bottom: 36px; }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1.3px;
+      margin-bottom: 14px;
+    }
+
+    .section-head p { color: var(--muted); font-size: 14px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: linear-gradient(145deg, rgba(22,28,43,.95), rgba(14,17,27,.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 27px;
+    }
+
+    .panel h3 { font-size: 17px; margin-bottom: 13px; }
+
+    .panel p { color: var(--muted); font-size: 13px; }
+
+    .principles { display: grid; gap: 17px; }
+
+    .principle {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .principle-icon {
+      flex: 0 0 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .principle strong { display: block; font-size: 13px; }
+
+    .principle span { color: var(--muted); font-size: 12px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      padding: 25px;
+      background: linear-gradient(150deg, rgba(24,30,47,.94), rgba(14,17,26,.96));
+      transition: .25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(142,162,255,.45);
+      box-shadow: 0 16px 45px rgba(0,0,0,.17);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .project-icon {
+      height: 45px;
+      width: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-size: 21px;
+      background: rgba(143,158,255,.12);
+      border: 1px solid rgba(143,158,255,.19);
+    }
+
+    .project-type {
+      color: var(--green);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project h3 { font-size: 19px; margin-bottom: 10px; }
+
+    .project p { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+
+    .project .chips { margin-top: auto; margin-bottom: 20px; }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #b9ccff;
+      font-size: 12px;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .project-link:hover { color: white; }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .skill-card {
+      border: 1px solid var(--line);
+      background: rgba(18,23,36,.8);
+      border-radius: 16px;
+      padding: 23px;
+    }
+
+    .skill-card h3 { font-size: 14px; margin-bottom: 15px; }
+
+    .skill-card .chips { gap: 8px; }
+
+    .timeline { display: grid; gap: 17px; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 53px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      background: rgba(18,23,36,.8);
+    }
+
+    .timeline-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      background: rgba(141,157,255,.12);
+      font-size: 22px;
+    }
+
+    .timeline-item h3 { font-size: 16px; }
+
+    .timeline-meta {
+      color: var(--blue);
+      font-size: 12px;
+      margin: 5px 0 10px;
+    }
+
+    .timeline-item p { color: var(--muted); font-size: 13px; }
+
+    .education-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .cgpa {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      text-align: center;
+      border: 1px solid rgba(185,160,255,.25);
+      background: rgba(185,160,255,.07);
+      border-radius: 12px;
+    }
+
+    .cgpa strong { display: block; font-size: 20px; color: #c4b2ff; }
+
+    .cgpa span { font-size: 10px; color: var(--muted); }
+
+    .contact-panel {
+      text-align: center;
+      padding: 55px 25px;
+      border-radius: 25px;
+      border: 1px solid rgba(143,162,255,.26);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(109,111,255,.17), transparent 60%),
+        #111521;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -1.4px;
+      margin-bottom: 14px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .contact-panel .hero-actions { justify-content: center; }
+
+    footer {
+      padding: 27px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: white; }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 75px; min-height: unset; }
+      .hero-card { max-width: 500px; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 16px; }
+    }
+
+    @media (max-width: 620px) {
+      .nav { min-height: 65px; }
+      .menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #0d101a;
+        padding: 20px 5%;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 19px;
+      }
+      .nav-links.open { display: flex; }
+      h1 { letter-spacing: -2.3px; }
+      .hero { padding: 66px 0 55px; }
+      section { padding: 62px 0; }
+      .projects-grid, .skill-grid { grid-template-columns: 1fr; }
+      .project { min-height: 260px; }
+      .panel { padding: 22px; }
+      .education-card { flex-direction: column; }
+      .timeline-item { grid-template-columns: 40px 1fr; gap: 13px; padding: 18px; }
+      .timeline-icon { height: 38px; width: 38px; font-size: 18px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">
+        <span class="brand-mark">AA</span>
+        <span>Azam Abbasi<span class="gradient">.</span></span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-expanded="false" aria-controls="navLinks">
+        Menu ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Open to AI/ML & Generative AI Opportunities
+          </div>
+
+          <h1>
+            Building useful<br>
+            <span class="gradient">AI-powered</span><br>
+            applications.
+          </h1>
+
+          <p>
+            Hey, I'm <strong>Azam Abbasi</strong> — a Computer Science
+            Engineering student specializing in Artificial Intelligence
+            and Machine Learning at Graphic Era Hill University, Dehradun.
+            I build with LLMs, AI agents, RAG pipelines, Python and modern
+            web technologies.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore Projects ↗</a>
+            <a class="btn btn-secondary"
+              href="https://github.com/AzamAbbasi123889"
+              target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn btn-secondary"
+              href="https://www.linkedin.com/in/azam-abbasi-448854289/"
+              target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="avatar">AA</div>
+          <h2>AI/ML Developer</h2>
+          <p>Generative AI · LLM Engineering · AI Agents</p>
+
+          <div class="divider"></div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <strong>8.14</strong>
+              <span>Current CGPA / 10</span>
+            </div>
+            <div class="stat">
+              <strong>2027</strong>
+              <span>Graduation batch</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="mini-label">Currently interested in</div>
+          <div class="chips">
+            <span class="chip">LLMs</span>
+            <span class="chip">RAG</span>
+            <span class="chip">AI Agents</span>
+            <span class="chip">Python</span>
+            <span class="chip">GenAI</span>
+            <span class="chip">Backend APIs</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <div class="section-kicker">01 / About me</div>
+          <h2>Curious about AI.<br><span class="gradient">Focused on building.</span></h2>
+          <p>
+            I enjoy combining AI models, software engineering, and thoughtful
+            product design to turn ideas into useful applications.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <h3>My journey</h3>
+            <p>
+              I'm pursuing a B.Tech in Computer Science Engineering with an
+              AI & ML specialization. My interests include Large Language
+              Models, Generative AI, retrieval-augmented generation, knowledge
+              graphs, intelligent automation, and building APIs for AI
+              applications. I enjoy learning by developing projects, testing
+              ideas, and improving my engineering skills.
+            </p>
+            <br>
+            <p>
+              My goal is to contribute to meaningful AI products, collaborate
+              with strong engineering teams, and grow as an AI/ML and
+              Generative AI engineer.
+            </p>
+          </div>
+
+          <div class="panel principles">
+            <div class="principle">
+              <div class="principle-icon">🧠</div>
+              <div>
+                <strong>AI-first problem solving</strong>
+                <span>LLMs, RAG, data extraction and intelligent workflows.</span>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-icon">⚙️</div>
+              <div>
+                <strong>Engineering mindset</strong>
+                <span>APIs, modular code, validation and practical integration.</span>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-icon">🚀</div>
+              <div>
+                <strong>Continuous learning</strong>
+                <span>Building projects and exploring emerging AI tools.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head">
+          <div class="section-kicker">02 / Selected work</div>
+          <h2>Projects that bring <span class="gradient">ideas to life.</span></h2>
+          <p>
+            A selection of my work across Generative AI, LLM applications,
+            multimodal support, and intelligent systems.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">{ }</div>
+              <span class="project-type">LLM Engineering</span>
+            </div>
+            <h3>Structured Output Generator</h3>
+            <p>
+              An LLM-powered structured data generation project that focuses
+              on output parsing, Pydantic validation, JSON Schema, and retry
+              logic to make model responses easier to consume programmatically.
+            </p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">OpenAI</span>
+              <span class="chip">Pydantic</span>
+              <span class="chip">JSON Schema</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889/structured-output-generator"
+              target="_blank" rel="noopener noreferrer">View source code ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">⌘</div>
+              <span class="project-type">AI Systems</span>
+            </div>
+            <h3>NEXUS-AI</h3>
+            <p>
+              An AI project exploring intelligent knowledge workflows and
+              the connection between information retrieval, language models,
+              and useful AI-powered assistance.
+            </p>
+            <div class="chips">
+              <span class="chip">Generative AI</span>
+              <span class="chip">LLMs</span>
+              <span class="chip">Python</span>
+              <span class="chip">AI Workflows</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889/Nexus-AI"
+              target="_blank" rel="noopener noreferrer">View source code ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">◈</div>
+              <span class="project-type">Multimodal AI</span>
+            </div>
+            <h3>OmniSupport AI</h3>
+            <p>
+              A multimodal enterprise support and troubleshooting agent
+              project designed to explore AI-assisted problem diagnosis and
+              support workflows.
+            </p>
+            <div class="chips">
+              <span class="chip">AI Agents</span>
+              <span class="chip">LLMs</span>
+              <span class="chip">Multimodal AI</span>
+              <span class="chip">Automation</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889/OmniSupport-AI-Multimodal-Enterprise-Support-Troubleshooting-Agent"
+              target="_blank" rel="noopener noreferrer">View source code ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">◎</div>
+              <span class="project-type">Knowledge Graphs</span>
+            </div>
+            <h3>NeuroGraph</h3>
+            <p>
+              An LLM memory and knowledge graph project exploring how
+              connected information can support context-aware retrieval
+              and more structured AI memory.
+            </p>
+            <div class="chips">
+              <span class="chip">Neo4j</span>
+              <span class="chip">LLMs</span>
+              <span class="chip">Knowledge Graphs</span>
+              <span class="chip">AI Memory</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889?tab=repositories"
+              target="_blank" rel="noopener noreferrer">Explore repositories ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">✧</div>
+              <span class="project-type">AI Application</span>
+            </div>
+            <h3>DeepTutor API</h3>
+            <p>
+              An AI tutoring application concept using an API-based backend,
+              language models, and vector search to support retrieval-grounded
+              learning and question answering.
+            </p>
+            <div class="chips">
+              <span class="chip">FastAPI</span>
+              <span class="chip">Groq</span>
+              <span class="chip">Pinecone</span>
+              <span class="chip">RAG</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889?tab=repositories"
+              target="_blank" rel="noopener noreferrer">Explore repositories ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <div class="project-icon">⌕</div>
+              <span class="project-type">Machine Learning</span>
+            </div>
+            <h3>Smart Resume Analyzer</h3>
+            <p>
+              An NLP-focused project concept for parsing resumes,
+              extracting relevant information, and helping organize
+              candidate skills and qualifications.
+            </p>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">NLP</span>
+              <span class="chip">Text Processing</span>
+              <span class="chip">Resume Parsing</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/AzamAbbasi123889?tab=repositories"
+              target="_blank" rel="noopener noreferrer">Explore repositories ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head">
+          <div class="section-kicker">03 / Technical toolkit</div>
+          <h2>Tools I use to <span class="gradient">build and experiment.</span></h2>
+          <p>
+            Technologies across AI/ML, backend engineering, frontend
+            development, databases, and deployment.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>Languages</h3>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Java</span>
+              <span class="chip">C</span><span class="chip">C++</span>
+              <span class="chip">SQL</span><span class="chip">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Generative AI & LLMs</h3>
+            <div class="chips">
+              <span class="chip">LLMs</span><span class="chip">RAG</span>
+              <span class="chip">Prompt Engineering</span>
+              <span class="chip">Transformers</span>
+              <span class="chip">Embeddings</span><span class="chip">AI Agents</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>ML & AI Libraries</h3>
+            <div class="chips">
+              <span class="chip">PyTorch</span><span class="chip">TensorFlow</span>
+              <span class="chip">Keras</span><span class="chip">Hugging Face</span>
+              <span class="chip">Sentence Transformers</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Backend & APIs</h3>
+            <div class="chips">
+              <span class="chip">FastAPI</span><span class="chip">Flask</span>
+              <span class="chip">Node.js</span><span class="chip">Express</span>
+              <span class="chip">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <div class="chips">
+              <span class="chip">React</span><span class="chip">Vite</span>
+              <span class="chip">Tailwind CSS</span><span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Databases & Infrastructure</h3>
+            <div class="chips">
+              <span class="chip">MongoDB Atlas</span><span class="chip">Pinecone</span>
+              <span class="chip">Neo4j</span><span class="chip">Redis</span>
+              <span class="chip">PostgreSQL</span><span class="chip">Supabase</span>
+              <span class="chip">Docker</span><span class="chip">Git</span>
+              <span class="chip">Render</span><span class="chip">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head">
+          <div class="section-kicker">04 / Experience</div>
+          <h2>Learning through <span class="gradient">hands-on work.</span></h2>
+          <p>Practical exposure to Generative AI and application development.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-icon">✦</div>
+            <div>
+              <h3>Generative AI Trainee Intern</h3>
+              <div class="timeline-meta">
+                Prodigy Infotech · Internship completed
+              </div>
+              <p>
+                Gained practical exposure to Generative AI through
+                project-based learning and hands-on work. Focused on
+                understanding LLM-powered applications, AI workflows,
+                prompt design, and applying AI concepts to practical problems.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-icon">⌘</div>
+            <div>
+              <h3>Independent AI/ML Projects</h3>
+              <div class="timeline-meta">Ongoing project development</div>
+              <p>
+                Building and exploring projects involving LLM applications,
+                structured data generation, knowledge graphs, AI support
+                agents, retrieval systems, and backend APIs.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="section-head">
+          <div class="section-kicker">05 / Education</div>
+          <h2>Academic <span class="gradient">foundation.</span></h2>
+        </div>
+
+        <div class="panel education-card">
+          <div>
+            <h3>B.Tech — Computer Science Engineering</h3>
+            <p style="color:#c8b8ff;margin:5px 0 10px">
+              Specialization: Artificial Intelligence & Machine Learning
+            </p>
+            <p>Graphic Era Hill University · Dehradun, Uttarakhand, India</p>
+            <p style="margin-top:9px">2023 – 2027 · Expected graduation: 2027</p>
+          </div>
+          <div class="cgpa">
+            <strong>8.14</strong>
+            <span>CGPA / 10</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-panel">
+          <div class="section-kicker">06 / Let's connect</div>
+          <h2>Have an interesting <span class="gradient">AI problem?</span></h2>
+          <p>
+            I'm interested in AI/ML and Generative AI internships,
+            collaborative projects, and opportunities to build useful
+            AI-powered products. Let's connect and exchange ideas.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+              href="https://www.linkedin.com/in/azam-abbasi-448854289/"
+              target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+            <a class="btn btn-secondary"
+              href="https://github.com/AzamAbbasi123889"
+              target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Azam Abbasi · Built with HTML & CSS</span>
+      <div class="footer-links">
+        <a href="https://github.com/AzamAbbasi123889"
+          target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/azam-abbasi-448854289/"
+          target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "Menu ☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
